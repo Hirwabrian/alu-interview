@@ -1,20 +1,32 @@
 #!/usr/bin/python3
-"""method that calculates the minimum number of operations"""
+"""
+This script calculates the minimum number of operations needed to achieve
+exactly n "H" characters in a file, starting with one "H". The operations allowed
+are "Copy All" and "Paste".
+"""
 
 
 def minop(n):
-    """method that calculates the minimum number of operations"""
+    """
+    Method that calculates the minimum number of operations required to get
+    exactly `n` "H" characters.
 
-    div = 2
-    operations = 0
+    Args:
+    n (int): The target number of "H" characters.
+
+    Returns:The minimum number of operations required to get `n` "H" characters.
+    """
+    div = 2  
+    operations = 0  
+
     if n <= 0:
         return 0
     else:
         while n > 1:
             while n % div == 0:
-                operations = operations + div
-                n = n // div
-            div = div + 1
+                operations += div
+                n //= div
+            div += 1
         return operations
 
 

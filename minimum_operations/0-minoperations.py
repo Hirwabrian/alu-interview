@@ -10,32 +10,32 @@
 '''
 
 
-def minop(n):
-    """
-    Method that calculates the minimum number of operations required to get
-    exactly `n` "H" characters.
+def minOperations(n):
+    '''
+    returns the minimum operations to get n H's
+    '''
+    min_operations = 0
 
-    Args:
-    n (int): The target number of "H" characters.
+    if n <= 1:
+        return min_operations
 
-    Returns:The minimum number of operations required to get `n` "H" characters.
-    """
-    div = 2  
-    operations = 0  
+    for i in range(2, n + 1):
+        while n % i == 0:
+            min_operations += i
+            n /= i
 
-    if n <= 0:
-        return 0
-    else:
-        while n > 1:
-            while n % div == 0:
-                operations += div
-                n //= div
-            div += 1
-        return operations
+    return min_operations
 
 
-if __name__ == "__main__":
-    n = int(input("Enter the number of H characters you want: "))
+if __name__ == '__main__':
+    from random import randint
+    from time import time
 
-    result = minop(n)
-    print(f"Min number of operations to reach {n} characters: {result}")
+    start_time = time()
+
+    for i in range(10):
+        n = randint(2, 100)
+        print("Min # of operations to reach {} char: {}".
+              format(n, minOperations(n)))
+
+    print(f'==> Program completed in {time() - start_time:.3f}s')

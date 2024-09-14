@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-"""
-This script calculates the minimum number of operations needed to achieve
-exactly n "H" characters in a file, starting with one "H". The operations allowed
-are "Copy All" and "Paste".
-"""
+
+
+''' A module that returns the minimum Operations it takes to
+    get to n characters.
+
+    Available operations:
+        copy
+        paste
+'''
 
 
 def minop(n):

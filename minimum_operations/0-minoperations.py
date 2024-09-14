@@ -1,10 +1,7 @@
 #!/usr/bin/python3
-
-
 """
-This script calculates the minimum number of operations needed to achieve
-exactly n "H" characters in a file, starting with one "H". The operations allowed
-are "Copy All" and "Paste".
+function that calculates the minimum number of operations needed to achieve
+exactly n "H" characters in a file.
 """
 
 

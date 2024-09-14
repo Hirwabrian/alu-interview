@@ -3,6 +3,8 @@
 
 
 def minop(n):
+    """method that calculates the minimum number of operations"""
+
     div = 2
     operations = 0
     if n <= 0:

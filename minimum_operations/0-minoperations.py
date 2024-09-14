@@ -1,41 +1,39 @@
 #!/usr/bin/python3
 
 
-''' A module that returns the minimum Operations it takes to
-    get to n characters.
-
-    Available operations:
-        copy
-        paste
-'''
+"""
+This script calculates the minimum number of operations needed to achieve
+exactly n "H" characters in a file, starting with one "H". The operations allowed
+are "Copy All" and "Paste".
+"""
 
 
-def minOperations(n):
-    '''
-    returns the minimum operations to get n H's
-    '''
-    min_operations = 0
+def minop(n):
+    """
+    Method that calculates the minimum number of operations required to get
+    exactly `n` "H" characters.
 
-    if n <= 1:
-        return min_operations
+    Args:
+    n (int): The target number of "H" characters.
 
-    for i in range(2, n + 1):
-        while n % i == 0:
-            min_operations += i
-            n /= i
+    Returns:The minimum number of operations required to get `n` "H" characters.
+    """
+    div = 2  
+    operations = 0  
 
-    return min_operations
+    if n <= 0:
+        return 0
+    else:
+        while n > 1:
+            while n % div == 0:
+                operations += div
+                n //= div
+            div += 1
+        return operations
 
 
-if __name__ == '__main__':
-    from random import randint
-    from time import time
+if __name__ == "__main__":
+    n = int(input("Enter the number of H characters you want: "))
 
-    start_time = time()
-
-    for i in range(10):
-        n = randint(2, 100)
-        print("Min # of operations to reach {} char: {}".
-              format(n, minOperations(n)))
-
-    print(f'==> Program completed in {time() - start_time:.3f}s')
+    result = minop(n)
+    print(f"Min number of operations to reach {n} characters: {result}")

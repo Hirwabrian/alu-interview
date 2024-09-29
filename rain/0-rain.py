@@ -11,7 +11,7 @@ def rain(walls):
     between the walls represented by a list of non-negative integers.
 
     Args:
-        walls (list): A list of non-negative integers representing the 
+        walls (list): A list of non-negative integers representing the
         heights of walls, where each element has a width of 1 unit.
 
     Returns:

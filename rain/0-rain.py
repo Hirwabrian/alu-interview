@@ -46,5 +46,5 @@ def rain(walls):
         # minus the current wall height
         water += min(left, right) - walls[i]
 
-        return water
->>>>>>> c6b13910d129bbcc7b49db4f554dd3b01f72ebb9
+    # Return the total trapped water
+    return water

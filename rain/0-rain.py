@@ -4,11 +4,12 @@ Module to calculate the amount of rainwater that can be trapped
 between walls of varying heights after a rainfall.
 """
 
+
 def rain(walls):
     """
     Calculate the total amount of rainwater that can be trapped
     between the walls represented by a list of non-negative integers.
-    
+
     Args:
         walls (list): A list of non-negative integers representing the 
         heights of walls, where each element has a width of 1 unit.
@@ -16,7 +17,7 @@ def rain(walls):
     Returns:
         int: The total amount of trapped rainwater (in square units).
         If no water can be trapped, or the input list is empty, returns 0.
-    
+
     Example:
         walls = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
         The function will return 6 as the total trapped water.

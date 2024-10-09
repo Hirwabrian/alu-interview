@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""a function that returns a list of lists of integers representing the Pascal's
-triangle of n"""
+"""a function that returns a list of lists of integers 
+representing the Pascal's triangle of n"""
 
 
 def pascal_triangle(n):
@@ -17,5 +17,6 @@ def pascal_triangle(n):
             row.append(prev_row[j - 1] + prev_row[j])
         row.append(1)
         pascal.append(row)
-    
+
     return pascal
+
